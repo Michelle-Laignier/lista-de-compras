@@ -1,0 +1,37 @@
+@media screen and (max-width: 900px) {
+    .lista {
+        margin: 2rem 5rem 6rem 5rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .lista {
+        gap: 2rem;
+        margin: 2rem 3rem 6rem 3rem;
+    }
+
+    .button-add {
+        height: 8vh;
+        width: 50%;
+    }
+
+    .lista-div {
+        height: 8vh;
+        margin: 0 1.5rem;
+        padding: 4px;
+    }
+
+    .lista-produto {
+        width: 40%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    .lista {
+        margin: 2rem 2rem 6rem 2rem;
+    }
+
+    .lista-div {
+        margin: 0 1rem;
+    }
+}
