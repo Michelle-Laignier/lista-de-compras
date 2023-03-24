@@ -20,9 +20,12 @@ function adicionaLinha () {
     let lista = document.querySelector(".lista")
 
     let newDiv = document.createElement("div")
-    let newInputNumber = document.createElement("input")
-    let newInputText = document.createElement("input")
+    let newInputCheck = document.createElement("input")
+    let newInputNumber = document.createElement("input") //(se não ficarem dentro da função
+    let newInputText = document.createElement("input") //as barras de input não aparecem)
     let newButton = document.createElement("button")
+
+    newInputCheck.type = "Checkbox"
 
     newInputNumber.type = "number"
     newInputNumber.placeholder = "Quantidade"
@@ -30,14 +33,16 @@ function adicionaLinha () {
     newInputText.type = "text"
     newInputText.placeholder = "Item"
 
-    newButton.textContent = "x"
+    newButton.textContent = "Remover"
 
     lista.appendChild(newDiv)
+    newDiv.appendChild(newInputCheck)
     newDiv.appendChild(newInputNumber)
     newDiv.appendChild(newInputText)
     newDiv.appendChild(newButton)
 
     newDiv.classList.add("lista-div")
+    newInputCheck.classList.add("lista-check")
     newInputNumber.classList.add("lista-quantidade")
     newInputText.classList.add("lista-produto")
     newButton.classList.add("button-remove")
