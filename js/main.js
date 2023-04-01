@@ -14,7 +14,6 @@ function removeLinha(event) {
 //////////////////////////////////////////////////////////////////////
 let buttonAdd = document.querySelector(".button-add")
 buttonAdd.addEventListener("click", adicionaLinha)
-buttonAdd.addEventListener("click", salvarNoLocalStorage)
 
 function adicionaLinha () {
 
@@ -42,6 +41,8 @@ function adicionaLinha () {
     newInputText.classList.add("lista-produto")
     newButton.classList.add("button-remove")
 
+    //como a função de persistirDados executa a de adicionarLinha, precisamos do click no botão
+    //se não, quando a página for recarregada ela já aciona o alert
     if (inputNumber.value == "" && inputText.value == "") {
         alert("Preencha pelo menos um dos campos")
     } else if (inputText.value == "") {
@@ -59,34 +60,4 @@ function adicionaLinha () {
     //pra aparecer nos campos novos os valores digitados nos inputs
     newInputNumber.textContent = inputNumber.value
     newInputText.textContent = inputText.value
-}
-
-////////////////////////////////////////////////////////////////////////
-let inputNumber = document.getElementById("quantidade")
-let inputText = document.getElementById("produto")
-
-const itens = JSON.parse(localStorage.getItem("itens")) || []
-
-function salvarNoLocalStorage () {
-    
-    let newInputNumber = document.querySelector(".lista-quantidade")
-    let newInputText = document.querySelector(".lista-produto")
-
-    newInputNumber.textContent = inputNumber.value
-    newInputText.textContent = inputText.value
-
-    const itemAtual = {
-        "item": newInputNumber.textContent,
-        "quantidade": newInputText.textContent
-    }
-
-    if (inputNumber.value != "" && inputText.value != "") {
-        itens.push(itemAtual)
-        localStorage.setItem("itens", JSON.stringify(itens))
-    } else if (inputNumber.value == "" && inputText.value != "") {
-        itens.push(itemAtual)
-        localStorage.setItem("itens", JSON.stringify(itens))
-    } else {
-        return
-    }
 }
