@@ -33,21 +33,30 @@ buttonLoad.addEventListener("click", carregarItensSalvos)
 
 function carregarItensSalvos () {
 
-    let newDiv = document.querySelector(".new-div")
-    newDiv.classList.add("lista-div")
+    let lista = document.querySelector(".lista")
+    
     //let buttonRemove = document.querySelector(".button-remove")
+    let itemP = document.querySelector(".lista-produto")
+    let quantidade = document.querySelector(".lista-quantidade")
 
     if (localStorage.itens) {
         itens.forEach(item => { //esse forEach resolve o problema do [object Object]
             itens = item;
             console.log(itens = item);
-        });
-    }
 
-    for (let item in itens) {
-        let itemP = document.createElement("p")
-        itemP.classList.add("lista-produto")
-        itemP.textContent = itens[item]
-        newDiv.append(itemP)
+            let newDiv = document.createElement("div")
+            newDiv.classList.add("lista-div")
+                
+            for (let item in itens) {
+                let itemP = document.createElement("p")
+                itemP.classList.add("lista-produto")
+                itemP.textContent = itens[item]
+
+                lista.append(newDiv)
+                newDiv.append(itemP)
+            }
+        });
+    } else if (localStorage.length <= 0) {
+        alert("Não há itens salvos. " + "Preencha os campos e clique em 'Adicionar item'.")
     }
 }
