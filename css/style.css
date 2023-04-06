@@ -44,9 +44,14 @@ body {
     width: -webkit-fill-available;
 }
 
-.lista-check {
+.lista-check, .lista-check-new {
     cursor: pointer;
     width: 18px;
+}
+
+.lista-check-new {
+    height: 8vh;
+    position: absolute;
 }
 
 .lista-produto {
@@ -59,12 +64,15 @@ body {
 }
 
 .lista-quantidade, .lista-produto {
+    align-items: center;
     background-color: #ffe5e58f;
     border: none;
     border-radius: 5px;
     color: darkred;
+    display: flex;
     font-family: var(--fonte);
     font-size: 20px;
+    justify-content: center;
     text-align: center;
 }
 
