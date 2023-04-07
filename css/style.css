@@ -26,10 +26,40 @@ body {
     padding: 1.5rem 0;
 }
 
-.button-add {
+.button-add, #button-load {
     background-color: #00b529;
-    height: 7vh;
-    width: 40%;
+    height: 8vh;
+    width: 50%;
+}
+
+.button-add:hover {
+    background-color: #05d837;
+}
+
+.button-add:active {
+    background-color: #07fd40;
+}
+
+#button-load {
+    background-color: #607d8bd1;
+}
+
+#button-load:hover {
+    background-color: #7497a9d1;
+}
+
+#button-load:active {
+    background-color: #7da4b8d1;
+}
+
+.button-add, .button-remove, #button-load {
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    font-family: var(--fonte);
+    font-size: 20px;
+    transition: 0.25s;
 }
 
 .lista-div {
@@ -76,6 +106,11 @@ body {
     text-align: center;
 }
 
+#quantidade:focus, #produto:focus {
+    background-color: #ffbebe8f;
+    border: 3px solid red;
+}
+
 .button-remove {
     background-color: red;
 }
@@ -86,22 +121,4 @@ body {
 
 .button-remove:active {
     background-color: rgb(155, 18, 18);
-}
-
-.button-add:hover {
-    background-color: #05d837;
-}
-
-.button-add:active {
-    background-color: #07fd40;
-}
-
-.button-add, .button-remove {
-    border: none;
-    border-radius: 5px;
-    color: white;
-    cursor: pointer;
-    font-family: var(--fonte);
-    font-size: 20px;
-    transition: 0.25s;
 }
