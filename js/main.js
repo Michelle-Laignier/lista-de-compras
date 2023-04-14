@@ -3,6 +3,7 @@ let buttonRemove = document.getElementsByClassName("button-remove");
 for (let i = 0; i < buttonRemove.length; i++) {
     let button = buttonRemove[i] //encontra cada botao de x
     button.addEventListener("click", removeLinha)
+    button.addEventListener("click", removerItensDoLocalStorage)
 }
 
 function removeLinha(event) {
@@ -41,8 +42,6 @@ function adicionaLinha () {
     newInputText.classList.add("lista-produto")
     newButton.classList.add("button-remove")
 
-    //como a função de persistirDados executa a de adicionarLinha, precisamos do click no botão
-    //se não, quando a página for recarregada ela já aciona o alert
     if (inputNumber.value == "" && inputText.value == "") {
         alert("Preencha pelo menos um dos campos")
     } else if (inputText.value == "") {
@@ -61,3 +60,4 @@ function adicionaLinha () {
     newInputNumber.textContent = inputNumber.value
     newInputText.textContent = inputText.value
 }
+console.log(buttonRemove);
