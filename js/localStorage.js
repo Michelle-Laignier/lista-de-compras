@@ -47,7 +47,7 @@ function carregarItensSalvosNoLocalStorage () {
             inputCheck.classList.add("lista-check-new")
 
             let buttonRemove = document.createElement("button")
-            buttonRemove.textContent = "Remover"
+            buttonRemove.textContent = "X"
             buttonRemove.classList.add("button-remove")
                 
             for (let item in itens) {

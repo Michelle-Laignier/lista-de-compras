@@ -35,3 +35,21 @@
         margin: 0 1rem;
     }
 }
+
+@media screen and (max-width: 400px) {
+    .lista {
+        margin: 2rem 1rem 6rem 1rem;
+    }
+
+    .lista-quantidade {
+        width: 40%;
+    }
+
+    .lista-produto {
+        width: 60%;
+    }
+
+    .button-add, #button-load, #button-remove-all {
+        height: 10vh;
+    }
+}

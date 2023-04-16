@@ -34,7 +34,7 @@ function adicionaLinha () {
     newInputText.type = "text"
     newInputText.placeholder = "Item"
 
-    newButton.textContent = "Remover"
+    newButton.textContent = "X"
 
     newDiv.classList.add("lista-div")
     newInputCheck.classList.add("lista-check")
