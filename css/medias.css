@@ -52,4 +52,8 @@
     .button-add, #button-load, #button-remove-all {
         height: 10vh;
     }
+
+    .lista-quantidade, .lista-produto {
+        font-size: 18px;
+    }
 }

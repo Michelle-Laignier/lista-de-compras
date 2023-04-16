@@ -113,7 +113,7 @@ body {
     color: darkred;
     display: flex;
     font-family: var(--fonte);
-    font-size: 18px;
+    font-size: 20px;
     justify-content: center;
     text-align: center;
 }

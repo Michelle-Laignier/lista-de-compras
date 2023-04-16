@@ -33,3 +33,10 @@
 .aviso-button:active {
     background-color: #ffe5e58f;
 }
+
+@media screen and (max-width: 400px) {
+    .aviso-ativo {
+        margin: 0 1em;
+        padding: 2rem;
+    }
+}
