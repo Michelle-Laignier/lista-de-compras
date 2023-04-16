@@ -26,7 +26,7 @@ body {
     padding: 1.5rem 0;
 }
 
-.button-add, #button-load {
+.button-add, #button-load, #button-remove-all {
     background-color: #00b529;
     height: 8vh;
     width: 50%;
@@ -52,7 +52,7 @@ body {
     background-color: #7da4b8d1;
 }
 
-.button-add, .button-remove, #button-load {
+.button-add, .button-remove, #button-load, #button-remove-all {
     border: none;
     border-radius: 5px;
     color: white;
@@ -60,6 +60,18 @@ body {
     font-family: var(--fonte);
     font-size: 20px;
     transition: 0.25s;
+}
+
+#button-remove-all {
+    background-color: #b20000fc;
+}
+
+#button-remove-all:hover {
+    background-color: #e40000;
+}
+
+#button-remove-all:active {
+    background-color: #ff0000;
 }
 
 .lista-div {

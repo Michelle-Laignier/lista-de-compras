@@ -11,8 +11,9 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
     <link rel="stylesheet" href="./css/medias.css">
+    <link rel="stylesheet" href="./css/aviso.css">
 
-    <title>Lista</title>
+    <title>Lista de Compras</title>
 </head>
 <body>
     <h1 class="titulo-pagina">Lista de compras</h1>
@@ -27,13 +28,14 @@
         <button id="button-remove-all">Remover todos os itens</button>
     </section>
 
-    <!-- 
-        <div class="lista-div">
-            <input type="number" placeholder="Quantidade" class="lista-quantidade">
-            <input type="text" placeholder="Item" class="lista-produto">
-            <button class="button-remove">Remover</button>
-        </div>
-     -->
+    <section class="aviso-nao-ativo">
+        <p class="aviso-texto">Quer mesmo remover todos os itens?</p>
+        <button class="aviso-button sim-button">Sim</button>
+        <button class="aviso-button nao-button">Não</button>
+    </section>
+
+    <p>AVISO: Não salve dados sigilosos neste site.</p>
+
     <script src="./js/main.js"></script>
     <script src="./js/localStorage.js"></script>
     <script src="./js/removeAll.js"></script>

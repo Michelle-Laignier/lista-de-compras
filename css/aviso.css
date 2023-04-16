@@ -1,0 +1,35 @@
+.aviso-nao-ativo {
+    display: none;
+}
+
+.aviso-ativo {
+    background-color: red;
+    display: flex;
+    flex-direction: column;
+    font-size: 30px;
+    gap: 1em;
+    height: auto;
+    margin: 0 3em;
+    padding: 4rem;
+    position: fixed;
+    top: 9rem;
+    width: -webkit-fill-available;
+}
+
+.aviso-button {
+    background-color: #ffe5e5db;
+    border: none;
+    border-radius: 5px;
+    color: darkslategray;
+    cursor: pointer;
+    font-size: 22px;
+    padding: 1rem;
+}
+
+.aviso-button:hover {
+    background-color: #ffe5e5a8;
+}
+
+.aviso-button:active {
+    background-color: #ffe5e58f;
+}
