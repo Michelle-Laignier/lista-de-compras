@@ -3,7 +3,7 @@ let buttonRemove = document.getElementsByClassName("button-remove");
 for (let i = 0; i < buttonRemove.length; i++) {
     let button = buttonRemove[i] //encontra cada botao de x
     button.addEventListener("click", removeLinha)
-    button.addEventListener("click", removerItensDoLocalStorage)
+    //button.addEventListener("click", removerItensDoLocalStorage)
 }
 
 function removeLinha(event) {
@@ -35,6 +35,7 @@ function adicionaLinha () {
     newInputText.placeholder = "Item"
 
     newButton.textContent = "X"
+    newButton.dataset = "data-itemIndex"
 
     newDiv.classList.add("lista-div")
     newInputCheck.classList.add("lista-check")
@@ -55,6 +56,7 @@ function adicionaLinha () {
     }
 
     newButton.addEventListener("click", removeLinha)
+    //newButton.addEventListener("click", removerItensDoLocalStorage)
 
     //pra aparecer nos campos novos os valores digitados nos inputs
     newInputNumber.textContent = inputNumber.value

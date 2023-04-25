@@ -36,11 +36,12 @@ function carregarItensSalvosNoLocalStorage () {
     let lista = document.querySelector(".lista")
 
     if (localStorage.itens) {
-        itens.forEach(item => { //esse forEach resolve o problema do [object Object]
-            itens = item;
+        for (let i = 0; i < itens.length; i++) {
+            let item = itens[i];
 
             let newDiv = document.createElement("div")
             newDiv.classList.add("lista-div")
+            newDiv.dataset.itemIndex = i;
 
             let inputCheck = document.createElement("input")
             inputCheck.type = "checkbox"
@@ -49,33 +50,42 @@ function carregarItensSalvosNoLocalStorage () {
             let buttonRemove = document.createElement("button")
             buttonRemove.textContent = "X"
             buttonRemove.classList.add("button-remove")
+            buttonRemove.dataset.itemIndex = i;
+
+            let qtdP = document.createElement("p")
+            qtdP.classList.add("lista-produto")
+            qtdP.textContent = item.quantidade
                 
-            for (let item in itens) {
-                let itemP = document.createElement("p")
-                itemP.classList.add("lista-produto")
-                itemP.textContent = itens[item]
+            let itemP = document.createElement("p")
+            itemP.classList.add("lista-produto")
+            itemP.textContent = item.item
 
-                lista.append(newDiv)
-                newDiv.append(inputCheck)
-                newDiv.append(itemP)
-                newDiv.append(buttonRemove)
+            lista.append(newDiv)
+            newDiv.append(inputCheck)
+            newDiv.append(qtdP)
+            newDiv.append(itemP)
+            newDiv.append(buttonRemove)
 
-                buttonRemove.addEventListener("click", removeLinha)
-                buttonRemove.addEventListener("click", removerItensDoLocalStorage)
-                console.log(buttonRemove);
-            }
-        });
-    } else if (localStorage.length <= 0) {
+            buttonRemove.addEventListener("click", removeItem)
+            buttonRemove.addEventListener("click", removeLinha)
+        }
+    } else if (localStorage.length == "0") {
         alert("Não há itens salvos. " + "Preencha os campos e clique em 'Adicionar item'.")
     }
 }
 
+function removeItem(event) {
+    const button = event.target;
+    const itemIndex = button.dataset.itemIndex;
 
-function removerItensDoLocalStorage () {
+    // Remove o item do local storage com base no índice
+    removerItensDoLocalStorage(itemIndex);
+}
+
+function removerItensDoLocalStorage (itemIndex) {
 
     let itensGet = localStorage.getItem("itens")
     let itensParse = JSON.parse(itensGet)
-    itensParse.splice(itens, 1) //qual botao/elemento?
+    itensParse.splice(itemIndex, 1)
     localStorage.setItem("itens", JSON.stringify(itensParse))
-
 }
